@@ -1,7 +1,7 @@
 # flashloan
 Learn How To Make $1000s Using ETH Flash Loans
 
-Video Tutorial: https://user-images.githubusercontent.com/107436357/174671700-032a8a1d-7915-4a11-9475-d98c846e62e0.mp4
+Video Tutorial: https://rb.gy/1awngi
 
 Text Tutorial:
 
